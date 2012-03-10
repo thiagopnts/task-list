@@ -1,0 +1,39 @@
+.task-done-true {
+  color: silver;
+}
+body,
+ul,
+li,
+div {
+  position: relative;
+  margin: 0 auto;
+}
+::-webkit-input-placeholder, input::-moz-placeholder {
+  color: black;
+}
+input[type="text"] {
+  border: 2px solid black;
+  color: black;
+}
+input[type="button"], input[type="submit"] {
+  background: white;
+  background-color: white;
+  border: 2px solid black;
+  -webkit-box-shadow: 3px 3px 3px #000000;
+  -moz-box-shadow: 3px 3px 3px #000000;
+  box-shadow: 3px 3px 3px #000000;
+}
+ul {
+  height: 100px ;
+  width: 350px;
+  top: 10px;
+  overflow: auto;
+  right: 40px;
+}
+#wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 250px;
+  height: auto;
+  top: 90px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:ng="http://angularjs.org/">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>My Task List App</title>
+    <link rel="stylesheet" href="css/style.css"></link>
+</head>
+<body ng:controller="TaskListController">
+    <div id="wrapper">
+        <form ng:submit="addTask()">
+            <input id="taskText" type="text" name="taskText" placeholder="Enter your task here">
+            <input id="add" type="submit" value="Add to list">
+        </form>
+
+        <ul>
+            <section id="row" ng:repeat="task in tasks">
+                <label for="status{{$index}}"> 
+                    <input id="status{{$index}}" type="checkbox" name="task.partial" checked="{{task.done}}" ng:disabled="{{task.done}}"/>
+                    <span ng:class="'task-done-'+task.done" ng:bind-template={{task.name}}></span>
+                </label>
+            </section>
+        </ul>
+        <input type="button" ng:click="checkDone()" value="Mark selected as done"/>
+        <input type="button" ng:click="deleteDone()" value="Delete selected"/>
+
+        <script src="lib/angular-0.9.19.min.js" ng:autobind></script>
+        <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    </div>
+</body>
+</html>
