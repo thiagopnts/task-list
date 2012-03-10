@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'data_mapper'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://postgres:postgres@localhost/taskslistapp')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/taskslistapp')
 
 class Task
     include DataMapper::Resource
