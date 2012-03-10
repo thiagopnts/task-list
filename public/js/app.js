@@ -1,4 +1,3 @@
-
 angular.service('Task', function($resource) {
     return $resource('/tasks', {}, {
         all: {method: 'GET', isArray: true},
@@ -8,6 +7,9 @@ angular.service('Task', function($resource) {
     });
 });
 
+String.prototype.trim = function() {
+    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
 
 function TaskListController(Task) {
     var self = this;
@@ -15,6 +17,7 @@ function TaskListController(Task) {
 
     this.disabled = true;
     this.addTask = function() {
+        this.taskText = this.taskText.trim()
         if(this.taskText == '') 
            return alert('You have to type something');
         var uid = new Date().getTime();
